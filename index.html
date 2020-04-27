@@ -1,155 +1,71 @@
 <html>
 <head>
-<title>THE NOOBS TOUR GUIDE</title>
+<title>NOOBS Food Recommendation</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="jsfile.js"></script>
+<script type="text/javascript" src="zomatoapi.js"></script>
 </head>
 <body>
-<section class="header"> 
-<h1><a href="" class="typewrite" data-period="2000" data-type='[ "Travel across the globe", "Fuel your wanderlust", "To travel is to live" ]'>
+<section class="header" id="hide-div" style="display: block">
+<h1><a href="" class="typewrite" data-period="2000" data-type='["Welcome foodies!", "Order, Eat, Sleep, Repeat", "Hangry is an emotion"]'>
     <span class="wrap"></span>
   </a>
     </h1>
 <p></p>
 <div class="input-group">
-    <input type="text" class="form-control" placeholder="Enter Your Destination">
+    <input type="text" class="form-control" id="text-search" placeholder="Enter Your Destination">
     <div class="input-group-append">
-    <button type="submit" class="input-group-text btn">Search</button>    
+    <button type="submit" onclick="hideDiv();openSearch();" class="input-group-text btn">Search</button>    
     </div>
 </div>
-</section>    
-<section class="features">
-<h1>Featured Destinations</h1> 
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-    <div class="feature-box">
-    <div class="feature-img">
-    <img src="https://www.bruisedpassports.com/wp-content/uploads/2016/07/Luxury-camping-Ladakh-Chamba-Camp-Thiksey-Leh-1.jpg">
-    <div class="price">
-        <p>1100/-</p>    
-    </div>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-o"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-    </div>
-    <div class="feature-details">
-        <h4>Leh</h4>
-        <p>Leh is located in the Indus river valley at a crossroads of the old trading routes from Kashgar, Tibet, and Kashmir. 
-            Since opening to tourists in 1974, it has become a bustling tourist town, with large numbers of Kashmiri traders.
-It's a small town, easy to get most places by foot. The old town is a compact area of mud brick houses and narrow lanes directly to the east of Main Bazar.
-        </p>
-        <div>
-        <span><i class="fa fa-map-marker"></i>Leh</span>
-        <span><i class="fa fa-sun-o"></i>4 Days</span>
-        <span><i class="fa fa-moon-o"></i>3 Nights</span>
+
+</section>  
+<section class="features" id="show-div" style="display: none">
+    <div class="container">
+        <h1>Trending collections!</h1>
+        <p>Browse lists of the finest restaurants in your city.</p>
+        <div class="row" id="title">
+
         </div>
     </div>
-    </div>
-</div>    
-<div class="col-md-4">
-<div class="feature-box">
-    <div class="feature-img">
-    <img src="https://media2.trover.com/T/589afd0b74eb4609cd0018dd/fixedw_large_4x.jpg">
-    <div class="price">
-        <p>1500/-</p>    
-    </div>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-o"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-    </div>
-    <div class="feature-details">
-        <h4>Rajasthan</h4>
-        <p>Rajasthan is a state in the northwest of India. It is mainly arid.
-             The main attraction for travellers is the vast Thar Desert and one of the oldest mountain ranges in the world, the Aravallis.
-             The Rajput heritage which is apparent in the forts, temples and palaces established by the Rajput Kings.
-             A typical Rajasthani fare would include daal-baati-churma.
-             Dairy based sweet products are very popular.
-             </p>
-        <div>
-        <span><i class="fa fa-map-marker"></i>Rajasthan</span>
-        <span><i class="fa fa-sun-o"></i>4 Days</span>
-        <span><i class="fa fa-moon-o"></i>3 Nights</span>
-        </div>
-    </div>
-    </div>    
-</div>    
-<div class="col-md-4">
-<div class="feature-box">
-    <div class="feature-img">
-    <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/03/Kerala-road-trip-itinerary-31.jpg">
-    <div class="price">
-        <p>20000/-</p>    
-    </div>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-o"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-    </div>
-    <div class="feature-details">
-        <h4>Kerala</h4>
-        <p> Kerala, a state in Southern India is known as a tropical paradise of waving palms and wide sandy beaches. 
-             It is known for its backwaters, mountains, coconuts, spices and art forms like Kathakali and Mohini Attam. 
-             It is the most literate state in India.
-             With options ranging from beautiful high altitude blue mountains to pristine rain forests and golden 
-              sun-sand beaches, Kerala has much to offer the visitor.
-        </p>
-        <div>
-        <span><i class="fa fa-map-marker"></i>Kerala</span>
-        <span><i class="fa fa-sun-o"></i>4 Days</span>
-        <span><i class="fa fa-moon-o"></i>3 Nights</span>
-        </div>
-    </div>
-    </div>    
-</div>    
-</div>    
-</div>
-</section>
-<section class="gallery">
-<h1>Travelling Gallery</h1>
+</section>  
+
+<section class="gallery" id="show-div1" style="display: none">
+<h1>Food gallery</h1>
 <div class="container">
 <div class="row">
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/11/Sikkim-Itinerary-7-1024x684.jpg">
-        <h4>Sikkim</h4>
+        <img src="https://66.media.tumblr.com/c1da35f283662765d688bcc90281d7d8/tumblr_mvhc10Xbv01ro9rq7o2_400.gif">
+        <h4>Healthy</h4>
     </div>
 </div> 
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/11/road-trip-karnataka-coorg-mysore-15-1024x684.jpg">
-        <h4>Coorg</h4>
+        <img src="https://i2.wp.com/codemyui.com/wp-content/uploads/2018/02/cheesy-pizza-loader.gif?">
+        <h4>Comfort Food</h4>
     </div>
 </div>
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2016/07/Leh-Ladakh-Road-Trip-India-Itinerary-Planning-6.jpg">
-        <h4>Kashmir</h4>
+        <img src="https://bestanimations.com/Food/Beverages/Coffee/coffee-animated-gif-18.gif">
+        <h4>Coffee</h4>
     </div>
 </div>
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/07/Things-to-do-in-Udaipur-city-palace.jpg">
-        <h4>Udaipur</h4>
+        <img src="https://66.media.tumblr.com/6298469f379334e3c98aadf48fa461f6/tumblr_okknjsByo81sa9pj8o3_500.gifv">
+        <h4>Chocolate</h4>
     </div>
 </div> 
 </div>    
 </div>
 </section>
-<section class="banner">
+<section class="banner" id="show-div2" style="display: none">
     <div class="banner-highlights">
         <div class="container">
             <div class="row">
@@ -165,7 +81,7 @@ It's a small town, easy to get most places by foot. The old town is a compact ar
         </div>
     </div>
 </section>
-<section class="users-feedback">
+<section class="users-feedback" id="show-div3" style="display: none">
 <h1>Users Review</h1> 
 <div class="container">
 <div class="row">
@@ -199,7 +115,7 @@ It's a small town, easy to get most places by foot. The old town is a compact ar
 </div>    
 </div>
 </section>
-<section class="footer">
+<section class="footer" id="show-div4" style="display: none">
 <div class="container">
 <div class="row">
     <div class="col-md-3">
@@ -227,15 +143,88 @@ It's a small town, easy to get most places by foot. The old town is a compact ar
     <p class="copyright">Made with <i class="fa fa-heart"></i> by THE NOOBS</p>
 </div>    
 </section>
-    
-    <script src="jsfile.js"></script>
+<script>
+        
+    function hideDiv() {
+        console.log("inside hidediv");
+  var hide = document.getElementById("hide-div");
+  var show = document.getElementById("show-div");
+  var show1 = document.getElementById("show-div1");
+  var show2 = document.getElementById("show-div2");
+  var show3 = document.getElementById("show-div3");
+  var show4 = document.getElementById("show-div4");
+
+  
+  if (hide.style.display === "block" && show.style.display === "none"){
+    hide.style.display = "none";
+    show.style.display = "block";
+    show1.style.display = "block";
+    show2.style.display = "block";
+    show3.style.display = "block";
+    show4.style.display = "block";
+
+  } 
+}
+
+   function openSearch(){
+        let output ='';
+        let v = document.getElementById('text-search').value;
+       
+        axios.get(`https://developers.zomato.com/api/v2.1/cities?q=${v}`,{
+            headers:{
+                'user-key': "dd8d4d0ec90219d1053b0513eb6cfaae"
+            }
+
+        })
+        .then(function(response){
+            console.log(response.data);
+           let k = response.data.location_suggestions[0].id;
+          //  console.log(response.data.location_suggestions[0].id);
+
+          axios.get(`https://developers.zomato.com/api/v2.1/collections?city_id=${k}`, {
+            headers:{
+                'user-key': "dd8d4d0ec90219d1053b0513eb6cfaae"
+                  }
+            })
+
+        .then(function (response) {
+            console.log(response.data);
+
+            for(var i=0;i<6;i++){
+                output += `
+                <div class="col-md-4">
+                <div class="feature-box">
+                <div class="feature-img">
+                <a href=" ${response.data.collections[i].collection.share_url}">
+                <img src="${response.data.collections[i].collection.image_url}" style="width=450px; height=450px;">
+                </a>
+                </div>
+                <div class="feature-details">
+                <h4>${response.data.collections[i].collection.title}</h4>
+                <p>${response.data.collections[i].collection.description}</p>           
+                </div></div></div>
+                ` 
+            }
+            document.getElementById('title').innerHTML += output;
+        })
+
+        .catch(function (error) {
+          console.log(error);
+         })
+
+         .then(function () {
+    // always executed
+  });
+
+        })
+        .catch(function (error) {
+          console.log(error);
+         })
+
+         .then(function () {
+
+  });
+    }
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
